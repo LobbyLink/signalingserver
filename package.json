@@ -3,7 +3,6 @@
     "start": "node ./out/server.js"
   },
   "dependencies": {
-    "typescript": "^5.4.5",
     "ws": "^8.17.0"
   },
   "devDependencies": {

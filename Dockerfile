@@ -1,7 +1,8 @@
 FROM node:alpine
-WORKDIR /usr/src/app
+WORKDIR /usr/signalingserver
+COPY package.json .
+RUN npm install && npm install typescript -g
 COPY . .
-RUN npm install
 RUN tsc
 EXPOSE 3000
 CMD ["npm", "start"]
