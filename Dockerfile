@@ -4,4 +4,4 @@ COPY . .
 RUN npm install
 RUN tsc
 EXPOSE 3000
-CMD ["node", "./out/server.js"]
+CMD ["npm", "start"]
