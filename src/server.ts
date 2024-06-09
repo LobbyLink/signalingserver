@@ -6,7 +6,7 @@ export const rooms: Map<string, Room> = new Map<string, Room>();
 export const used_ids: number[] = [];
 export const ROOM_CODE_LENGTH: number = 4;
 
-const PORT: number = 3000;
+const PORT: number = 5072;
 const wss = new WebSocket.Server({ port: PORT });
 console.log(`WebSocket Server started on Port ${PORT}`);
 
