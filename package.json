@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "tsc",
     "start": "node ./out/server.js"
   },
   "dependencies": {

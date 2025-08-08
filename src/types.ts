@@ -1,5 +1,4 @@
 import { WebSocket } from "ws";
-import { MessageType } from "./ws_messages";
 
 export type Room = {
     host: WebSocket,
@@ -7,15 +6,28 @@ export type Room = {
     sealed: boolean,
 };
 
-export type Message = {
-    id: number,
-	room_code: string,
-    type: MessageType,
-    payload: Payload,
-	server: boolean,
-};
-
-type Payload = {
-    sdp?: string,
-    name?: string,
+export interface MessagePayload {
+  type: MessageType;
+  from?: number;
+  to?: number;
+  room_code?: string;
+  id?: number;
+  webrtc_type?: string;
+  sdp?: string;
+  media?: string;
+  index?: number;
+  name?: string;
+  successful?: boolean;
 }
+
+export enum MessageType{
+	Id,
+    RoomCode,
+	Join,
+    Offer,
+	Answer,
+    Candidate,
+	UserConnected,
+	UserDisconnected,
+	CheckIn
+};

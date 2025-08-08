@@ -1,6 +1,6 @@
 import { WebSocket } from "ws";
 import { Room } from "./types"
-import { handleMessage } from "./ws_messages";
+import { handle_message } from "./ws_messages";
 
 export const rooms: Map<string, Room> = new Map<string, Room>();
 export const used_ids: number[] = [];
@@ -14,7 +14,7 @@ wss.on('connection', (ws: WebSocket) => {
     console.log(`New client connected.`);
 
     ws.on('message', (message: string) => {
-        handleMessage(ws, message);
+        handle_message(ws, message);
     });
 
     ws.on('close', () => {
